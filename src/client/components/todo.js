@@ -15,6 +15,7 @@ const propTypes = {
   onClickTodo: React.PropTypes.func,
   status: React.PropTypes.string,
   text: React.PropTypes.string,
+  archive: React.PropTypes.bool,
 };
 
 /**
@@ -25,15 +26,24 @@ const defaultProps = {
   filtered: false,
   onClickDelete: noop,
   onClickTodo: noop,
+  onClickArchive: noop,
   status: '',
   text: '',
+  archive: false,
 };
 
 /**
  * Todo component
  * @returns {ReactElement}
  */
-const Todo = ({ filtered, onClickDelete, onClickTodo, status, text }) => {
+const Todo = ({
+  filtered,
+  onClickDelete,
+  onClickTodo,
+  onClickArchive,
+  status,
+  text,
+  archive }) => {
   /**
    * Base CSS class
    */
@@ -43,9 +53,20 @@ const Todo = ({ filtered, onClickDelete, onClickTodo, status, text }) => {
     + (status === 'complete' ? ' todo--status-complete' : '')
     + (filtered ? ' todo--filtered' : '');
 
+//Show Archive button for completed items only
+  const showArchiveButton = () => {
+    if (status == 'complete') {
+      return (
+        <Button text="Archive" onClick={onClickArchive} />
+      )
+    }
+  }
+
   return (
     <li className={todoCls}>
       <TodoLink text={text} onClick={onClickTodo} />
+
+      {showArchiveButton()}
 
       <Button text="Delete" onClick={onClickDelete} />
     </li>

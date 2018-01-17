@@ -111,6 +111,8 @@ const Todos = ({ filterBy, todos, updateTodos }) => {
         case 'completed':
           filtered = todo.status !== 'complete';
           break;
+        case 'archived':
+          filtered = todo.archive == true;
         default:
           filtered = false;
       }
@@ -123,6 +125,7 @@ const Todos = ({ filterBy, todos, updateTodos }) => {
           onClickTodo={onClickTodo.bind(this, todo)}
           status={todo.status}
           text={todo.text}
+          archive={todo.archive}
         />
       );
     })
