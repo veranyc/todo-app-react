@@ -4,9 +4,14 @@ body {
 }
 
 .container {
+  font-family: Helvetica, Arial, sans-serif;
   margin: 5%;
   max-width: 1000px;
   width: 100%;
+
+  .counter {
+    color: map-get($colors, darkgray);
+  }
 }
 
 .display-none {

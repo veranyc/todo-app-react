@@ -3,6 +3,7 @@
   border-bottom: 1px solid map-get($colors, lightgray);
   color: map-get($colors, darkgray);
   display: flex;
+  justify-content: space-between;
   cursor: pointer;
   font-family: Helvetica, Arial, sans-serif;
   width: 90%;

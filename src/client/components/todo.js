@@ -57,7 +57,7 @@ const Todo = ({
   const showArchiveButton = () => {
     if (status == 'complete') {
       return (
-        <Button text="Archive" onClick={onClickArchive} />
+        <Button buttonClass='--archive' text="Archive" onClick={onClickArchive} />
       )
     }
   }
@@ -68,7 +68,7 @@ const Todo = ({
 
       {showArchiveButton()}
 
-      <Button text="X" onClick={onClickDelete} />
+      <Button buttonClass='--delete' text="X" onClick={onClickDelete} />
     </li>
   );
 }

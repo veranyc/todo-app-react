@@ -3,4 +3,25 @@
   border: none;
   color: map-get($colors, darkgray);
   text-decoration: none;
+
+  &--archive {
+    background-color: $green;
+    border: 1px solid map-get($colors, lightgray);
+    border-radius: 5px;
+    color: map-get($colors, ui-light);
+    text-decoration: none;
+  }
+
+  &--delete {
+    border: none;
+    color: map-get($colors, darkgray);
+    float: right;
+    height: 20px;
+  }
+
+  &--all-complete {
+    color: map-get($colors, primary);
+    border: none;
+    font-weight: bold;
+  }
 }

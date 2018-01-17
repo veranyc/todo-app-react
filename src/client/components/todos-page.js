@@ -118,8 +118,11 @@ class TodosPage extends React.Component {
         <Navbar filterBy={this.state.filterBy} onClickFilter={this.setFilterBy} />
 
         <div className="container">
-          <span>{this.countActiveTodos()} </span>
-          <button>Complete All</button>
+          <span className="counter">{this.countActiveTodos()} </span>
+          <Button
+            buttonClass='--all-complete'
+            text='Complete All'
+          />
 
           <TodoForm onSubmit={this.addTodo} />
 
