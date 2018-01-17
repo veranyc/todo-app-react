@@ -63,9 +63,20 @@ app.put('/todos/:id', function(req, res) {
   var index = todos.findIndex (function(todo) {
     return todo.id == id;
   });
-  var toggledTodo = todos[index]
+  var toggledTodo = todos[index];
   toggledTodo.status = (toggledTodo.status == 'active' ? 'complete' : 'active');
   res.json(toggledTodo);
+});
+
+//Update archived value to true
+app.put('/todos/:id', function(req, res) {
+  var id = parseInt(req.params.id);
+  var index = todos.findIndex (function(todo) {
+    return todo.id == id;
+  });
+  var archivedTodo = todos[index];
+  archivedTodo.archive = true;
+  res.json(archivedTodo);
 });
 
 // Node server.

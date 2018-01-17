@@ -13,6 +13,7 @@ const propTypes = {
   filtered: React.PropTypes.bool,
   onClickDelete: React.PropTypes.func,
   onClickTodo: React.PropTypes.func,
+  onClickArchive: React.Props.func,
   status: React.PropTypes.string,
   text: React.PropTypes.string,
   archive: React.PropTypes.bool,
