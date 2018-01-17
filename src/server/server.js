@@ -47,10 +47,17 @@ app.post('/todos', function(req, res) {
 });
 
 app.delete('/todos/:id', function(req, res) {
-  res.status(500).send({"message": "not implemented"});
+  var id = req.params.id;
+  var index = todos.findIndex(function(todo) {
+    return todo.id == id;
+  });
+  var deleted = todos[index];
+  todos.splice(index, 1);
+  res.json(deleted);
 });
 
 app.put('/todos/:id', function(req, res) {
+  console.log('running toggle status')
   res.status(500).send({"message": "not implemented"});
 });
 
