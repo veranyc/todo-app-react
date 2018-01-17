@@ -51,9 +51,9 @@ app.delete('/todos/:id', function(req, res) {
   var index = todos.findIndex(function(todo) {
     return todo.id == id;
   });
-  var deleted = todos[index];
+  var deletedTodo = todos[index];
   todos.splice(index, 1);
-  res.json(deleted);
+  res.json(deletedTodo);
 });
 
 app.put('/todos/:id', function(req, res) {
