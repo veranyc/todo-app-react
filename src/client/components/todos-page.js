@@ -96,6 +96,28 @@ class TodosPage extends React.Component {
     this.setState({ todos });
   }
 
+  // Count active todos and display with message
+
+  countActiveTodos() {
+    var count = 0;
+    this.state.todos.forEach( todo => {
+      if (todo.status == 'active') {
+        count += 1
+      };
+    })
+    return count
+  }
+
+  showCount() {
+    var count = this.countActiveTodos();
+    countMessage = count + 'tasks remaining';
+    return (
+      <span className='todo-count'>
+      {countMessage}
+      </span>
+    )
+  }
+
   /**
    * Render
    * @returns {ReactElement}
