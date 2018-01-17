@@ -1,4 +1,16 @@
 // Header module
 .header {
   background-color: map-get($colors, primary);
+  padding-bottom: 10px;
+  padding-left: 5%;
+  padding-top: 10px;
+
+  &__item {
+    color: map-get($colors, ui-light);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px gray;
+  }
 }

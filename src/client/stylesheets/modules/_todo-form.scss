@@ -1,0 +1,19 @@
+//Todo Form module
+.todo-form {
+  text-align: center;
+  margin: 20px auto;
+
+  &__input {
+    border: 1px solid map-get($colors, lightgray);
+    border-radius: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    outline: none;
+    padding: 1%;
+
+    &::placeholder {
+      color: map-get($colors, gray);
+    }
+  }
+}

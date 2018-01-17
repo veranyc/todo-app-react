@@ -68,7 +68,7 @@ const Todo = ({
 
       {showArchiveButton()}
 
-      <Button text="Delete" onClick={onClickDelete} />
+      <Button text="X" onClick={onClickDelete} />
     </li>
   );
 }

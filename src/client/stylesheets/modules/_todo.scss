@@ -1,6 +1,11 @@
 // Todo module.
 .todo {
+  border-bottom: 1px solid map-get($colors, lightgray);
+  color: map-get($colors, darkgray);
+  display: flex;
   cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 90%;
 
   &--status-complete {
     text-decoration: line-through;
