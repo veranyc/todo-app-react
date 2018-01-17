@@ -105,17 +105,7 @@ class TodosPage extends React.Component {
         count += 1
       };
     })
-    return count
-  }
-
-  showCount() {
-    var count = this.countActiveTodos();
-    countMessage = count + 'tasks remaining';
-    return (
-      <span className='todo-count'>
-      {countMessage}
-      </span>
-    )
+    return count + ' tasks remaining'
   }
 
   /**
@@ -126,6 +116,9 @@ class TodosPage extends React.Component {
     return (
       <div className={this.baseCls}>
         <Navbar filterBy={this.state.filterBy} onClickFilter={this.setFilterBy} />
+
+        <span>{this.countActiveTodos()} </span>
+        <button>Complete All</button>
 
         <TodoForm onSubmit={this.addTodo} />
 
