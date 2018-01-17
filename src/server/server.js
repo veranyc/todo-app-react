@@ -46,6 +46,7 @@ app.post('/todos', function(req, res) {
   res.json(todos);
 });
 
+//Delete ToDo List Item
 app.delete('/todos/:id', function(req, res) {
   var id = req.params.id;
   var index = todos.findIndex(function(todo) {
@@ -56,9 +57,15 @@ app.delete('/todos/:id', function(req, res) {
   res.json(deletedTodo);
 });
 
+//Toggle status of Todo List Item between active and complete status
 app.put('/todos/:id', function(req, res) {
-  console.log('running toggle status')
-  res.status(500).send({"message": "not implemented"});
+  var id = parseInt(req.params.id);
+  var index = todos.findIndex (function(todo) {
+    return todo.id == id;
+  });
+  var toggledTodo = todos[index]
+  toggledTodo.status = (toggledTodo.status == 'active' ? 'complete' : 'active');
+  res.json(toggledTodo);
 });
 
 // Node server.
